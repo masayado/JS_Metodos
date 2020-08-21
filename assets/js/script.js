@@ -41,15 +41,10 @@ console.log(Traumatologia);
 
 //Eliminar el primer y último elemento del arreglo de Radiología
 
-var Radiologia = Radiologia;
+var Radiologia;
 Radiologia.pop();
-console.log(Radiologia);
-
-var Radiologia = Radiologia;
 Radiologia.shift();
 console.log(Radiologia);
-
-
 
 //Cantidad de atenciones
 

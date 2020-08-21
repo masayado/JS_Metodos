@@ -52,6 +52,23 @@ document.write('<p>Consultas médicas Dental</p>');
 Dental.forEach(function(datos) {
     document.write(datos.hora, ' - ', datos.especialista, ' - ', datos.paciente, ' - ', datos.rut, ' - ', datos.prevision,'<br>' );});
 
+//Imprimir listado de todos los pacientes que se atendieron en el centro médico
+
+document.write('<p>Listado de todos los pacientes</p>');
+
+    Radiologia.forEach(function(nombre) {
+    document.write(nombre.paciente, '<br>');
+    });
+
+    Traumatologia.forEach(function(nombre) {
+    document.write(nombre.paciente, '<br>');
+    });
+
+    Dental.forEach(function(nombre) {
+    document.write(nombre.paciente,'<br>');
+    });
+
+
 //Cantidad de atenciones
 
 document.write('<h2>Cantidad de Atenciones</h2>');

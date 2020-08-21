@@ -3,11 +3,11 @@ document.write('<h1>Estadisticas Centro Medico Ñuñoa</h1>');
 //Variables y sus respectivos array de objetos
 
 var Radiologia = [
-    {hora:"11:00", especialista:"IGNACIO SCHULZ", paciente:"FRANCISCA ROJAS", rut:"9.878.782-1", prevision:"FONASA"},
+    {hora:"11:00", especialista:"IGNACIO SCHULZ",        paciente:"FRANCISCA ROJAS", rut:"9.878.782-1", prevision:"FONASA"},
     {hora:"11:30", especialista:"FEDERICO SUBERCASEAUX", paciente:"PAMELA ESTRADA", rut:"15.345.241-3", prevision:"ISAPRE"},
-    {hora:"15:00", especialista:"FERNANDO WURTHZ", paciente:"ARMANDO LUNA", rut:"16.445.345-9", prevision:"ISAPRE"},
-    {hora:"15:30", especialista:"ANA MARIA GODOY", paciente:"MANUEL GODOY", rut:"17.666.419-0", prevision:"FONASA"},
-    {hora:"16:00", especialista:"PATRICIA SUAZO", paciente:"RAMON ULLOA", rut:"14.989.389-K", prevision:"FONASA"}
+    {hora:"15:00", especialista:"FERNANDO WURTHZ",       paciente:"ARMANDO LUNA", rut:"16.445.345-9", prevision:"ISAPRE"},
+    {hora:"15:30", especialista:"ANA MARIA GODOY",       paciente:"MANUEL GODOY", rut:"17.666.419-0", prevision:"FONASA"},
+    {hora:"16:00", especialista:"PATRICIA SUAZO",        paciente:"RAMON ULLOA", rut:"14.989.389-K", prevision:"FONASA"}
 ]
 
 var Traumatologia = [
@@ -31,30 +31,23 @@ var Dental = [
 
 //Agregar las siguientes horas al arreglo de Traumatología
 
-var Traumatologia_extra = [
-    {hora:"09:00", especialista: "RENÉ POBLETE", paciente: "ANA GELLONA", rut: "13.123.329-7", prevision: "ISAPRE"},
-    {hora:"09:30", especialista: "MARIA SOLAR", paciente: "RAMIRO ANDRADE", rut: "12.221.451-K", prevision: "FONASA"},
-    {hora: "10:00", especialista: "RAUL LOYOLA", paciente: "CARMEN ISLA", rut: "10.112.348-3", prevision: "ISAPRE"},
-    {hora: "10:30", especialista: "ANTONIO LARENAS", paciente: "PABLO LOAYZA", rut: "13.453.234-1", prevision: "ISAPRE"},
-    {hora: "12:00", especialista: "MATIAS ARAVENA", paciente: "SUSANA POBLETE", rut: "14.345.656-6", prevision: "FONASA"}
-]
-
 Traumatologia.push(
-{hora:"09:00", especialista: "RENÉ POBLETE", paciente: "ANA GELLONA", rut: "13.123.329-7", prevision: "ISAPRE"},
-{hora:"09:30", especialista: "MARIA SOLAR", paciente: "RAMIRO ANDRADE", rut: "12.221.451-K", prevision: "FONASA"},
-{hora: "10:00", especialista: "RAUL LOYOLA", paciente: "CARMEN ISLA", rut: "10.112.348-3", prevision: "ISAPRE"},
-{hora: "10:30", especialista: "ANTONIO LARENAS", paciente: "PABLO LOAYZA", rut: "13.453.234-1", prevision: "ISAPRE"},
-{hora: "12:00", especialista: "MATIAS ARAVENA", paciente: "SUSANA POBLETE", rut: "14.345.656-6", prevision: "FONASA"});
+{hora:"09:00",  especialista: "RENÉ POBLETE",    paciente: "ANA GELLONA",    rut: "13.123.329-7", prevision: "ISAPRE"},
+{hora:"09:30",  especialista: "MARIA SOLAR",     paciente: "RAMIRO ANDRADE", rut: "12.221.451-K", prevision: "FONASA"},
+{hora: "10:00", especialista: "RAUL LOYOLA",     paciente: "CARMEN ISLA",    rut: "10.112.348-3", prevision: "ISAPRE"},
+{hora: "10:30", especialista: "ANTONIO LARENAS", paciente: "PABLO LOAYZA",   rut: "13.453.234-1", prevision: "ISAPRE"},
+{hora: "12:00", especialista: "MATIAS ARAVENA",  paciente: "SUSANA POBLETE", rut: "14.345.656-6", prevision: "FONASA"});
 console.log(Traumatologia);
 
+//Eliminar el primer y último elemento del arreglo de Radiología
 
+var Radiologia = Radiologia;
+Radiologia.pop();
+console.log(Radiologia);
 
-
-
-
-
-
-
+var Radiologia = Radiologia;
+Radiologia.shift();
+console.log(Radiologia);
 
 
 
@@ -66,15 +59,3 @@ document.write(`<p>Cantidad de Atenciones para Radiología: ${Radiologia.length}
 document.write(`<p>Cantidad de Atenciones para Traumatología: ${Traumatologia.length}</p>`);
 document.write(`<p>Cantidad de Atenciones para Dental: ${Dental.length}</p>`);
 
-//Primeras y ultimas atenciones
-
-document.write('<h2>Primeras y ultimas atenciones</h2>');
-
-document.write('<p><b>Radiología</b></p>');
-document.write(`<p>Primera atención: ${Radiologia[0].paciente} - Rut: ${Radiologia[0].rut} - Previsión: ${Radiologia[0].prevision} <b>|</b> Ultima atención: ${Radiologia[4].paciente} - Rut: ${Radiologia[4].rut} - Previsión: ${Radiologia[4].prevision}</p>`)
-
-document.write('<p><b>Traumatología</b></p>');
-document.write(`<p>Primera atención: ${Traumatologia[0].paciente} - Rut: ${Traumatologia[0].rut} - Previsión: ${Traumatologia[0].prevision} <b>|</b> Ultima atención: ${Traumatologia[6].paciente} - Rut: ${Traumatologia[6].rut} - Previsión: ${Traumatologia[6].prevision}</p>`)
-
-document.write('<p><b>Dental</b></p>');
-document.write(`<p>Primera atención: ${Dental[0].paciente} - Rut: ${Dental[0].rut} - Previsión: ${Dental[0].prevision} <b>|</b> Ultima atención: ${Dental[5].paciente} - Rut: ${Dental[5].rut} - Previsión: ${Dental[5].prevision}</p>`)

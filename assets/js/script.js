@@ -11,7 +11,7 @@ var Radiologia = [
 ]
 
 var Traumatologia = [
-    {hora:"8:00", especialista:"MARIA PAZ ALTUZARRA", paciente:"PAULA SANCHEZ", rut:"15.554.774-5", prevision:"FONASA"},
+    {hora:"08:00", especialista:"MARIA PAZ ALTUZARRA", paciente:"PAULA SANCHEZ", rut:"15.554.774-5", prevision:"FONASA"},
     {hora:"10:00", especialista:"RAUL ARAYA", paciente:"ANGÉLICA NAVAS", rut:"15.444.147-9", prevision:"ISAPRE"},
     {hora:"10:30", especialista:"MARIA ARRIAGADA", paciente:"ANA KLAPP", rut:"17.879.423-9", prevision:"ISAPRE"},
     {hora:"11:00", especialista:"ALEJANDRO BADILLA", paciente:"FELIPE MARDONES", rut:"1.547.423-6", prevision:"ISAPRE"},
@@ -21,7 +21,7 @@ var Traumatologia = [
 ]
 
 var Dental = [
-    {hora:"8:30", especialista:"ANDREA ZUÑIGA", paciente:"MARCELA RETAMAL", rut:"11.123.425-6", prevision:"ISAPRE"},
+    {hora:"08:30", especialista:"ANDREA ZUÑIGA", paciente:"MARCELA RETAMAL", rut:"11.123.425-6", prevision:"ISAPRE"},
     {hora:"11:00", especialista:"MARIA PIA ZAÑARTU", paciente:"ANGEL MUÑOZ", rut:"9.878.789-2", prevision:"ISAPRE"},
     {hora:"11:30", especialista:"SCARLETT WITTING", paciente:"MARIO KAST", rut:"7.998.789-5", prevision:"FONASA"},
     {hora:"13:00", especialista:"FRANCISCO VON TEUBER", paciente:"KARIN FERNANDEZ", rut:"18.887.662-K", prevision:"FONASA"},
@@ -41,10 +41,16 @@ console.log(Traumatologia);
 
 //Eliminar el primer y último elemento del arreglo de Radiología
 
-var Radiologia;
 Radiologia.pop();
 Radiologia.shift();
 console.log(Radiologia);
+
+//Imprimir en la página, la lista de consultas médicas de Dental
+
+document.write('<p>Consultas médicas Dental</p>');
+
+Dental.forEach(function(datos) {
+    document.write(datos.hora, ' - ', datos.especialista, ' - ', datos.paciente, ' - ', datos.rut, ' - ', datos.prevision,'<br>' );});
 
 //Cantidad de atenciones
 

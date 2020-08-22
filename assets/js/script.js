@@ -1,4 +1,4 @@
-document.write('<h1>Estadisticas Centro Medico Ñuñoa</h1>');
+document.write('<h2>Estadisticas Centro Medico Ñuñoa</h2>');
 
 //Variables y sus respectivos array de objetos
 
@@ -47,14 +47,14 @@ console.log(Radiologia);
 
 //3- Imprimir en la página, la lista de consultas médicas de Dental
 
-document.write('<p>Consultas médicas Dental</p>');
+document.write('<h4>Consultas médicas Dental</h4>');
 
 Dental.forEach(function(datos) {
     document.write(datos.hora, ' - ', datos.especialista, ' - ', datos.paciente, ' - ', datos.rut, ' - ', datos.prevision,'<br>' );});
 
 //4- Imprimir listado de todos los pacientes que se atendieron en el centro médico
 
-document.write('<p>Listado de todos los pacientes</p>');
+document.write('<h4>Listado de todos los pacientes que se atendieron en el Centro Médico</h4>');
 
     Radiologia.forEach(function(nombre) {
     document.write(nombre.paciente, '<br>');
@@ -70,15 +70,20 @@ document.write('<p>Listado de todos los pacientes</p>');
 
 //5- 5. Modificar mediante funciones las previsiones de Dental: aquellas que indican ser FONASA cambiarlas por ISAPRE y viceversa.
 
-Dental = Dental.map(function(paciente) {
-    if (paciente.prevision === "FONASA") {
-    Dental.prevision = "ISAPRE";
+Dental = Dental.map(function(pacientes) {
+    if (pacientes.prevision === "FONASA") {
+    pacientes.prevision = "ISAPRE";
     } else {
-    Dental.prevision = "FONASA";
+    pacientes.prevision = "FONASA";
     }
-    return Dental.prevision;
+    return pacientes;
     });
-    console.log(Dental);
+    console.log(Dental.paciente);
+
+//Luego, imprimir este resultado junto con el rut asociado a dicha consulta, separados por punto y coma.
+
+document.write('<h4>Resultado de cambio de previsión de var Dental de FONASA A ISAPRE y viceversa</h4>');
+
 
 //Cantidad de atenciones
 

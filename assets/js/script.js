@@ -47,28 +47,24 @@ Radiologia.shift();
 
 document.write('<h4>Consultas médicas Dental</h4>');
 
-Dental.forEach(function(datos) {
-    document.write(datos.hora, ' - ', datos.especialista, ' - ', datos.paciente, ' - ', datos.rut, ' - ', datos.prevision,'<br>' );});
+Dental.forEach((datospacientes,index) => {
+    document.write(`<p> ${datospacientes.hora} - ${datospacientes.paciente} - ${datospacientes.rut} - ${datospacientes.prevision}</p>`); 
+});
 
 //4- Imprimir listado de todos los pacientes que se atendieron en el centro médico
 
 document.write('<h4>Listado de todos los pacientes que se atendieron en el Centro Médico</h4>');
 
-    Radiologia.forEach(function(nombre) {
-    document.write(nombre.paciente, '<br>');
-    });
+var todos_los_pacientes = Radiologia.concat(Traumatologia, Dental);
 
-    Traumatologia.forEach(function(nombre) {
-    document.write(nombre.paciente, '<br>');
-    });
-
-    Dental.forEach(function(nombre) {
-    document.write(nombre.paciente,'<br>');
-    });
+todos_los_pacientes.forEach(printpacientes);
+function printpacientes (elemento, index, array) {
+    document.write(`<p> ${todos_los_pacientes[index].paciente} </p>`);
+}
 
 //5- 5. Modificar mediante funciones las previsiones de Dental: aquellas que indican ser FONASA cambiarlas por ISAPRE y viceversa.
 
-Dental = Dental.map(function(pacientes) {
+Dental = Dental.map((pacientes)=> {
     if (pacientes.prevision === "FONASA") {
     pacientes.prevision = "ISAPRE";
     } else {
@@ -76,19 +72,32 @@ Dental = Dental.map(function(pacientes) {
     }
     return pacientes;
     });
+
 //Luego, imprimir este resultado junto con el rut asociado a dicha consulta, separados por punto y coma.
 
 document.write('<h4>Resultado de cambio de previsión de var Dental de FONASA A ISAPRE y viceversa</h4>');
-function printprevision (elemento, index, array) {
-    document.write(`${Dental[index].prevision} ; ${Dental[index].paciente}<br>`);
- }
- Dental.forEach(printprevision);
 
+Dental.forEach(printprevision);
+function printprevision (elemento, index, array) {
+    document.write(`<p>${Dental[index].prevision} ; ${Dental[index].paciente} ; ${Dental[index].rut}</p>`);
+ }
 //Cantidad de atenciones
 
-document.write('<h2>Cantidad de Atenciones</h2>');
+document.write('<h4>Cantidad de Atenciones</h4>');
 
 document.write(`<p>Cantidad de Atenciones para Radiología: ${Radiologia.length}</p>`);
 document.write(`<p>Cantidad de Atenciones para Traumatología: ${Traumatologia.length}</p>`);
 document.write(`<p>Cantidad de Atenciones para Dental: ${Dental.length}</p>`);
 
+//Primeras y ultimas atenciones
+
+document.write('<h4>Primeras y ultimas atenciones</h4>');
+
+document.write('<b>Radiología</b>');
+document.write(`<p>Primera atención: ${Radiologia[0].paciente} - Rut: ${Radiologia[0].rut} - Previsión: ${Radiologia[0].prevision} <b>|</b> Ultima atención: ${Radiologia[Radiologia.length -1].paciente} - Rut: ${Radiologia[Radiologia.length -1].rut} - Previsión: ${Radiologia[Radiologia.length -1].prevision}</p>`)
+
+document.write('<b>Traumatología</b>');
+document.write(`<p>Primera atención: ${Traumatologia[0].paciente} - Rut: ${Traumatologia[0].rut} - Previsión: ${Traumatologia[0].prevision} <b>|</b> Ultima atención: ${Traumatologia[Traumatologia.length-1].paciente} - Rut: ${Traumatologia[Traumatologia.length-1].rut} - Previsión: ${Traumatologia[Traumatologia.length-1].prevision}</p>`)
+
+document.write('<b>Dental</b>');
+document.write(`<p>Primera atención: ${Dental[0].paciente} - Rut: ${Dental[0].rut} - Previsión: ${Dental[0].prevision} <b>|</b> Ultima atención: ${Dental[Dental.length-1].paciente} - Rut: ${Dental[Dental.length-1].rut} - Previsión: ${Dental[Dental.length-1].prevision}</p>`)

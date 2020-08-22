@@ -48,7 +48,7 @@ Radiologia.shift();
 document.write('<h4>Consultas médicas Dental</h4>');
 
 Dental.forEach((datospacientes,index) => {
-    document.write(`<p> ${datospacientes.hora} - ${datospacientes.paciente} - ${datospacientes.rut} - ${datospacientes.prevision}</p>`); 
+    document.write(`<p> ${datospacientes.hora} - ${datospacientes.especialista} - ${datospacientes.paciente} - ${datospacientes.rut} - ${datospacientes.prevision}</p>`); 
 });
 
 //4- Imprimir listado de todos los pacientes que se atendieron en el centro médico

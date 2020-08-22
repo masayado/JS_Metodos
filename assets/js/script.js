@@ -29,7 +29,7 @@ var Dental = [
     {hora:"14:00", especialista:"RAQUEL VILLASECA", paciente:"ANA SEPULVEDA", rut:"14.441.281-0", prevision:"ISAPRE"}
 ]
 
-//Agregar las siguientes horas al arreglo de Traumatología
+//1- Agregar las siguientes horas al arreglo de Traumatología
 
 Traumatologia.push(
 {hora:"09:00",  especialista: "RENÉ POBLETE",    paciente: "ANA GELLONA",    rut: "13.123.329-7", prevision: "ISAPRE"},
@@ -39,20 +39,20 @@ Traumatologia.push(
 {hora: "12:00", especialista: "MATIAS ARAVENA",  paciente: "SUSANA POBLETE", rut: "14.345.656-6", prevision: "FONASA"});
 console.log(Traumatologia);
 
-//Eliminar el primer y último elemento del arreglo de Radiología
+//2- Eliminar el primer y último elemento del arreglo de Radiología
 
 Radiologia.pop();
 Radiologia.shift();
 console.log(Radiologia);
 
-//Imprimir en la página, la lista de consultas médicas de Dental
+//3- Imprimir en la página, la lista de consultas médicas de Dental
 
 document.write('<p>Consultas médicas Dental</p>');
 
 Dental.forEach(function(datos) {
     document.write(datos.hora, ' - ', datos.especialista, ' - ', datos.paciente, ' - ', datos.rut, ' - ', datos.prevision,'<br>' );});
 
-//Imprimir listado de todos los pacientes que se atendieron en el centro médico
+//4- Imprimir listado de todos los pacientes que se atendieron en el centro médico
 
 document.write('<p>Listado de todos los pacientes</p>');
 
@@ -68,6 +68,17 @@ document.write('<p>Listado de todos los pacientes</p>');
     document.write(nombre.paciente,'<br>');
     });
 
+//5- 5. Modificar mediante funciones las previsiones de Dental: aquellas que indican ser FONASA cambiarlas por ISAPRE y viceversa.
+
+Dental = Dental.map(function(paciente) {
+    if (paciente.prevision === "FONASA") {
+    Dental.prevision = "ISAPRE";
+    } else {
+    Dental.prevision = "FONASA";
+    }
+    return Dental.prevision;
+    });
+    console.log(Dental);
 
 //Cantidad de atenciones
 

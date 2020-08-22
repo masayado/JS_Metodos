@@ -77,10 +77,9 @@ Dental = Dental.map((pacientes)=> {
 
 document.write('<h4>Resultado de cambio de previsión de var Dental de FONASA A ISAPRE y viceversa</h4>');
 
-Dental.forEach(printprevision);
-function printprevision (elemento, index, array) {
-    document.write(`<p>${Dental[index].prevision} ; ${Dental[index].paciente} ; ${Dental[index].rut}</p>`);
- }
+ Dental.forEach((printprev,index) => {
+    document.write(`<p> ${printprev.prevision} ; ${printprev.paciente} ; ${printprev.rut}</p>`); 
+});
 //Cantidad de atenciones
 
 document.write('<h4>Cantidad de Atenciones</h4>');

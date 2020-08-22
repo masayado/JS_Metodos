@@ -37,13 +37,11 @@ Traumatologia.push(
 {hora: "10:00", especialista: "RAUL LOYOLA",     paciente: "CARMEN ISLA",    rut: "10.112.348-3", prevision: "ISAPRE"},
 {hora: "10:30", especialista: "ANTONIO LARENAS", paciente: "PABLO LOAYZA",   rut: "13.453.234-1", prevision: "ISAPRE"},
 {hora: "12:00", especialista: "MATIAS ARAVENA",  paciente: "SUSANA POBLETE", rut: "14.345.656-6", prevision: "FONASA"});
-console.log(Traumatologia);
 
 //2- Eliminar el primer y último elemento del arreglo de Radiología
 
 Radiologia.pop();
 Radiologia.shift();
-console.log(Radiologia);
 
 //3- Imprimir en la página, la lista de consultas médicas de Dental
 
@@ -78,12 +76,13 @@ Dental = Dental.map(function(pacientes) {
     }
     return pacientes;
     });
-    console.log(Dental.paciente);
-
 //Luego, imprimir este resultado junto con el rut asociado a dicha consulta, separados por punto y coma.
 
 document.write('<h4>Resultado de cambio de previsión de var Dental de FONASA A ISAPRE y viceversa</h4>');
-
+function printprevision (elemento, index, array) {
+    document.write(`${Dental[index].prevision} ; ${Dental[index].paciente}<br>`);
+ }
+ Dental.forEach(printprevision);
 
 //Cantidad de atenciones
 
